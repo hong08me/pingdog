@@ -1,0 +1,698 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      학원 핑계 생성기 | Academy Excuse Generator - 실시간 학원 결석 핑게
+      만들어요
+    </title>
+    <meta
+      name="description"
+      content="학원 결석 지각 핑계를 간단하게 생성하세요. 자연스럽고 설득력 있는 핑게 문구를 실시간으로 만들어 드립니다."
+    />
+    <meta
+      name="keywords"
+      content="학원핑계, 학원결석핑계, 지각핑계, 결석사유서, 선생님께드리는메세지, 핑게생성기, academy excuse generator"
+    />
+    <meta name="author" content="Academy Excuse Generator" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://your-domain.pages.dev/" />
+    <meta
+      property="og:title"
+      content="학원 핑계 생성기 - 실시간 학원 결석 지각 핑게 만들어주기"
+    />
+    <meta
+      property="og:description"
+      content="자연스럽고 설득력 있는 학원 핑계를 1초 만에 생성하세요. 본인이름과 선생님이름만 입력하면 끝!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="학원 핑계 생성기" />
+    <meta
+      name="twitter:description"
+      content="실시간 학원 핑게 생성기 - 간단하게 자연스러운 핑게 만들어주세요"
+    />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        background: #0a0a0a;
+        color: #f0f0f0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .header {
+        width: 100%;
+        max-width: 720px;
+        padding: 48px 24px 12px;
+        text-align: center;
+      }
+      .header h1 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        display: inline-block;
+        padding-bottom: 6px;
+        margin-bottom: 6px;
+      }
+      .header p {
+        color: #888;
+        font-size: 0.85rem;
+        margin-top: 8px;
+      }
+      .ad-banner {
+        width: 100%;
+        max-width: 720px;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: center;
+      }
+      .ad-placeholder {
+        width: 100%;
+        max-width: 728px;
+        height: 90px;
+        border: 1px dashed #333;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-size: 0.75rem;
+      }
+      .output-area {
+        width: 100%;
+        max-width: 720px;
+        padding: 12px 24px 36px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: relative;
+      }
+      .sparkle-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 10;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      .sparkle-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        border-radius: 50%;
+        opacity: 0;
+        animation: sparkle-float 1.2s ease-out forwards;
+      }
+      @keyframes sparkle-float {
+        0% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        60% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-120px) scale(0.3);
+        }
+      }
+      @keyframes card-pop {
+        0% {
+          opacity: 0;
+          transform: translateY(16px) scale(0.97);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      .excuse-card {
+        background: #111;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 20px 22px;
+        position: relative;
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .excuse-card:hover {
+        border-color: #555;
+        background: #1a1a1a;
+      }
+      .card-label {
+        display: inline-block;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #000;
+        background: #fff;
+        padding: 3px 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+      .card-body {
+        font-size: 0.92rem;
+        color: #f0f0f0;
+        line-height: 1.75;
+        margin-bottom: 14px;
+      }
+      .card-body strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .copy-btn {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 7px 16px;
+        border: 1px solid #333;
+        background: transparent;
+        color: #888;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.25s;
+        font-family: inherit;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .copy-btn:hover {
+        border-color: #fff;
+        color: #fff;
+        background: #1a1a1a;
+      }
+      .copy-btn.copied {
+        border-color: #6fcf6f;
+        color: #6fcf6f;
+      }
+      .input-panel {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 300px;
+        background: #111;
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 24px 22px;
+        z-index: 100;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+      }
+      .input-panel h3 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 16px;
+        letter-spacing: 0.04em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .input-panel h3::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        border-radius: 50%;
+      }
+      .field {
+        margin-bottom: 12px;
+      }
+      .field label {
+        display: block;
+        font-size: 0.7rem;
+        color: #888;
+        margin-bottom: 4px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+      .field input {
+        width: 100%;
+        padding: 10px 12px;
+        background: #0a0a0a;
+        border: 1px solid #333;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 0.85rem;
+        font-family: inherit;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .field input:focus {
+        border-color: #fff;
+      }
+      .field input::placeholder {
+        color: #444;
+      }
+      .generate-btn {
+        width: 100%;
+        padding: 12px;
+        background: #fff;
+        color: #000;
+        font-size: 0.85rem;
+        font-weight: 800;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 4px;
+        font-family: inherit;
+        transition:
+          opacity 0.2s,
+          transform 0.15s;
+      }
+      .generate-btn:hover {
+        opacity: 0.88;
+      }
+      .generate-btn:active {
+        transform: scale(0.97);
+      }
+      .footer-content {
+        width: 100%;
+        max-width: 720px;
+        padding: 32px 24px 160px;
+        border-top: 1px solid #333;
+        margin-top: auto;
+      }
+      .footer-section {
+        margin-bottom: 28px;
+      }
+      .footer-section h2 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #222;
+      }
+      .footer-section p,
+      .footer-section li {
+        font-size: 0.8rem;
+        color: #888;
+        line-height: 1.85;
+      }
+      .footer-section ul {
+        padding-left: 18px;
+      }
+      .footer-section li {
+        margin-bottom: 4px;
+      }
+      .footer-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid #333;
+      }
+      .footer-links a {
+        color: #fff;
+        font-size: 0.75rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: opacity 0.2s;
+      }
+      .footer-links a:hover {
+        opacity: 0.6;
+      }
+      .copyright {
+        text-align: center;
+        color: #444;
+        font-size: 0.68rem;
+        padding-top: 16px;
+        margin-top: 8px;
+      }
+      @media (max-width: 600px) {
+        .input-panel {
+          width: calc(100% - 24px);
+          right: 12px;
+          bottom: 12px;
+          padding: 18px 16px;
+        }
+        .header h1 {
+          font-size: 1.4rem;
+        }
+        .output-area,
+        .ad-banner,
+        .footer-content {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 3px;
+      }
+      .card-stars {
+        display: inline-block;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      .card-stars .star {
+        color: #444;
+      }
+      .card-stars .star.filled {
+        color: #fff;
+      }
+      .card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>학원 핑계 생성기</h1>
+      <p>이름만 입력하면 자연스러운 핑계가 만들어집니다</p>
+    </header>
+    <div class="ad-banner">
+      <div class="ad-placeholder">
+        [ Google AdSense - 728x90 리더보드 배너 ]
+      </div>
+    </div>
+    <main class="output-area" id="outputArea">
+      <div class="sparkle-overlay" id="sparkleOverlay"></div>
+      <p
+        style="
+          color: #888;
+          font-size: 0.85rem;
+          text-align: center;
+          padding-top: 40px;
+        "
+      >
+        오른쪽 하단 입력창에 이름을 넣으신 후
+        <strong style="color: #fff">핑게 생성하기</strong>를 눌러주세요.
+      </p>
+    </main>
+    <aside class="input-panel" id="inputPanel">
+      <h3>설정</h3>
+      <div class="field">
+        <label for="userName">본인 이름</label
+        ><input type="text" id="userName" placeholder="본인 이름 입력" />
+      </div>
+      <div class="field">
+        <label for="teacherName">선생님 이름</label
+        ><input type="text" id="teacherName" placeholder="선생님 이름 입력" />
+      </div>
+      <button class="generate-btn" id="generateBtn">핑게 생성하기</button>
+    </aside>
+    <footer class="footer-content">
+      <div class="footer-section">
+        <h2>사이트 소개</h2>
+        <p>
+          학원 핑계 생성기는 학원 수업 중 결석이나 지각이 필요할 때, 자연스럽고
+          설득력 있는 핑게 문구를 빠르게 만들어주는 도구입니다. 본 사이트는
+          교육적인 목적으로 개발되었으며, 핑게의 남용은 권장하지 않습니다.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h2>자주 묻는 질문</h2>
+        <ul>
+          <li>
+            핑게 생성기는 무료인가요? - 네, 완전히 무료입니다. 회원가입이 필요
+            없습니다.
+          </li>
+          <li>
+            어떻게 사용하나요? - 오른쪽 하단 입력창에 이름 두 가지를 넣고 버튼만
+            누르세요.
+          </li>
+          <li>
+            생성된 핑게는 어떻게 쓰나요? - 복사 버튼을 눌러 클립보드에 저장한 뒤
+            필요한 곳에 붙여넣기하세요.
+          </li>
+          <li>
+            다른 핑게도 만들어지나요? - 버튼을 다시 누를 때마다 새로운 핑게가
+            추가로 나옵니다.
+          </li>
+        </ul>
+      </div>
+      <div class="ad-banner" style="padding: 12px 0">
+        <div class="ad-placeholder">[ Google AdSense - 728x90 배너 ]</div>
+      </div>
+      <div class="footer-section">
+        <h2>개인정보처리방침</h2>
+        <p>
+          <strong style="color: #ccc">1. 수집하는 정보</strong><br />본 서비스는
+          이름 입력값을 클라이언트 측에서 처리하며 서버로 어떤 개인정보도
+          전송하지 않습니다. 모든 데이터는 이용자의 기기에서만 저장 처리되며
+          제3자에게 공유되지 않습니다.
+        </p>
+        <br />
+        <p>
+          <strong style="color: #ccc">2. 쿠키 및 추적</strong><br />본 사이트는
+          성능 향상을 위해 Google AdSense 서비스의 광고 쿠키를 사용할 수
+          있습니다. 광고 쿠키 정책은 Google의 개인정보처리방침에 따릅니다.
+        </p>
+        <br />
+        <p>
+          <strong style="color: #ccc">3. 법적 고지</strong><br />본 서비스에서
+          생성된 콘텐츠는 교육 참고 목적으로만 활용되어야 합니다. 타인을
+          기망하거나 무단 결석을 정당화하는 용도로 사용될 경우 책임은 전적으로
+          이용자에게 있습니다.
+        </p>
+        <br />
+        <p>
+          <strong style="color: #ccc">4. 문의</strong><br />개인정보 관련 문의는
+          contact@example.com으로 해주세요. 5영업일 이내 답변 드립니다.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h2>사이트 소개 (About Us)</h2>
+        <p>
+          학원 핑게 생성기는 바쁜 학생들을 위해 개발된 웹 도구입니다. 2026년에
+          처음 출시되었으며, 지속적으로 UI/UX 개선과 새로운 핑게 템플릿 추가를
+          통해 더 나은 경험을 제공하고 있습니다.
+        </p>
+        <p>
+          본 서비스는 Cloudflare Pages 플랫폼 위에서 구축되어 빠른 로딩 속도와
+          안정적인 서비스를 제공합니다.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#privacy">개인정보처리방침</a><a href="#about">사이트 소개</a
+        ><a href="#faq">자주 묻는 질문</a
+        ><a href="mailto:contact@example.com">문의하기</a>
+      </div>
+      <p class="copyright">
+        2026 Academy Excuse Generator. All rights reserved.
+      </p>
+    </footer>
+    <script>
+      const templates = [
+        function (u, t) {
+          return {
+            label: 'HEALTH',
+            text:
+              t +
+              ' 선생님, 죄송합니다. 오늘 아침부터 몸살 기운이 너무 심하고 어지러워서 도저히 학원에 갈 수 없을 것 같습니다. 약 먹고 쉬면서 오늘 빠진 부분은 다음 주까지 꼭 보충해 놓겠습니다. 갑작스럽게 연락드려 죄송합니다.',
+          };
+        },
+        function (u, t) {
+          return {
+            label: 'TRAFFIC',
+            text:
+              t +
+              ' 선생님, 안녕하세요 ' +
+              u +
+              '입니다. 학교에서 밀린 수행평가를 아직 다 하지 못했는데, 이거를 전부 다 끝내면 너무 늦은 시간대가 될 것 같아서 오늘 학원에 가지 못할 것 같습니다. 오늘 밤새서라도 다 끝내고 다음 시간에 지장 없도록 하겠습니다. 죄송합니다.',
+          };
+        },
+        function (u, t) {
+          return {
+            label: 'FAMILY',
+            text:
+              t +
+              ' 선생님, ' +
+              u +
+              '입니다. 제가 지금 가족 여행으로 제주도에 와 있어서 학교도 쉬었는데, 학원에는 미리 말씀을 못 드렸네요. 오늘 수업은 못 갈 것 같습니다. 미리 연락 못 드려 정말 죄송하고, 다녀와서 오늘 밀린 진도 꼭 따로 채우겠습니다.',
+          };
+        },
+        function (u, t) {
+          return {
+            label: 'TECHNICAL',
+            text:
+              t +
+              ' 선생님, 안녕하세요 ' +
+              u +
+              '입니다. 오늘 학교에 제출해야 하는 조별 과제가 있는데 팀원들이랑 마무리가 안 되어서 조금 더 남아서 해야 할 것 같습니다. 다 끝내고 가면 학원 마칠 시간이라 오늘 수업은 참여가 어려울 것 같습니다. 양해 부탁드립니다.',
+          };
+        },
+        function (u, t) {
+          return {
+            label: 'EVENT',
+            text:
+              t +
+              ' 선생님, ' +
+              u +
+              '입니다. 오늘 학교 축제(또는 행사) 준비 때문에 방과 후 연습이 늦게까지 잡혀서 학원 시간에 맞춰가기 힘들 것 같습니다. 제가 맡은 역할이 있어서 중간에 빠지기가 어려운 상황이라 오늘 결석해야 할 것 같습니다. 내일 복습 꼭 해두겠습니다.',
+          };
+        },
+        function (u, t) {
+          return {
+            label: 'WEATHER',
+            text:
+              t +
+              ' 선생님, ' +
+              u +
+              '입니다. 갑자기 집안에 개인적인 사정이 생겨서 오늘 학원에 가기 어려울 것 같습니다. 부모님께서도 오늘은 학원에 가기 힘들 것 같다고 하셔서 급하게 연락드립니다. 다음 주 수업 때 늦지 않게 출석해서 더 열심히 하겠습니다. 죄송합니다.',
+          };
+        },
+        function (u, t) {
+          return {
+            label: 'MEDICAL',
+            text:
+              t +
+              ' 선생님, ' +
+              u +
+              '입니다. 최근에 체력이 너무 떨어져서 그런지 감기몸살이 심하게 왔습니다. 도저히 앉아서 수업을 들을 수 있는 상태가 아니라서 오늘 하루 쉬어야 할 것 같습니다. 다음 시간까지 숙제랑 진도 밀리지 않게 친구한테 물어보고 채워 가겠습니다.',
+          };
+        },
+        function (u, t) {
+          return {
+            label: 'HOME EMERGENCY',
+            text:
+              t +
+              ' 선생님, ' +
+              u +
+              '입니다. 오늘 학교 끝나고 집에 오자마자 갑자기 체했는지 속이 너무 울렁거리고 토할 것 같아서 학원에 못 갈 것 같습니다. 약 먹고 누워있는데 도저히 움직이기가 힘드네요. 갑자기 결석하게 되어 정말 죄송합니다.',
+          };
+        },
+      ];
+
+      const outputArea = document.getElementById('outputArea');
+      const sparkleOverlay = document.getElementById('sparkleOverlay');
+
+      function getNames() {
+        return {
+          u: document.getElementById('userName').value.trim() || '[본인이름]',
+          t:
+            document.getElementById('teacherName').value.trim() ||
+            '[선생님이름]',
+        };
+      }
+
+      function spawnSparkles() {
+        sparkleOverlay.innerHTML = '';
+        for (let i = 0; i < 36; i++) {
+          const p = document.createElement('div');
+          p.className = 'sparkle-particle';
+          p.style.left = Math.random() * 100 + '%';
+          p.style.top = 40 + Math.random() * 50 + '%';
+          p.style.width = 2 + Math.random() * 4 + 'px';
+          p.style.height = p.style.width;
+          p.style.animationDelay = Math.random() * 0.6 + 's';
+          p.style.animationDuration = 0.8 + Math.random() * 0.7 + 's';
+          sparkleOverlay.appendChild(p);
+        }
+        setTimeout(() => (sparkleOverlay.innerHTML = ''), 1500);
+      }
+
+      function addCards() {
+        const names = getNames();
+        spawnSparkles();
+        const indices = [];
+        while (indices.length < 3) {
+          const r = Math.floor(Math.random() * templates.length);
+          if (!indices.includes(r)) indices.push(r);
+        }
+        const frag = document.createDocumentFragment();
+        indices.forEach((idx, i) => {
+          const t = templates[idx](names.u, names.t);
+          const starCount = Math.floor(Math.random() * 5) + 1;
+          let stars = '';
+          for (let s = 0; s < 5; s++) {
+            stars +=
+              s < starCount
+                ? '<span class="star filled">★</span>'
+                : '<span class="star">☆</span>';
+          }
+          const card = document.createElement('div');
+          card.className = 'excuse-card shimmering';
+          card.style.animationDelay = i * 0.1 + 's';
+          card.innerHTML =
+            '<div class="card-meta"><span class="card-label">' +
+            t.label +
+            '</span><div class="card-stars">' +
+            stars +
+            '</div></div><p class="card-body">' +
+            t.text.replace(/\n/g, '<br>') +
+            '</p><button class="copy-btn" data-text="' +
+            t.text.replace(/"/g, '&quot;') +
+            '"> 복사하기</button>';
+          frag.appendChild(card);
+        });
+        const ph = outputArea.querySelector('p[style]');
+        if (ph) ph.remove();
+        outputArea.insertBefore(frag, sparkleOverlay);
+      }
+
+      document
+        .getElementById('generateBtn')
+        .addEventListener('click', addCards);
+
+      outputArea.addEventListener('click', async (e) => {
+        const btn = e.target.closest('.copy-btn');
+        if (!btn) return;
+        try {
+          const text = btn.getAttribute('data-text').replace(/&quot;/g, '"');
+          await navigator.clipboard.writeText(text);
+          btn.textContent = ' 복사 완료!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = ' 복사하기';
+            btn.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          const ta = document.createElement('textarea');
+          ta.value = btn.getAttribute('data-text').replace(/&quot;/g, '"');
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          btn.textContent = ' 복사 완료!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = ' 복사하기';
+            btn.classList.remove('copied');
+          }, 2000);
+        }
+      });
+
+      document.querySelectorAll('#userName,#teacherName').forEach((input) => {
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') addCards();
+        });
+      });
+    </script>
+  </body>
+</html>
